@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Random Site Button</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f0f0f0;
+      font-family: Arial, sans-serif;
+    }
+    button {
+      padding: 20px 40px;
+      font-size: 1.5rem;
+      border: none;
+      border-radius: 10px;
+      background-color: #007BFF;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <button onclick="goToRandomSite()">Go to a Random Site</button>
+
+  <script>
+    const safeSites = [
+      "https://www.wikipedia.org",
+      "https://www.boredpanda.com",
+      "https://www.khanacademy.org",
+      "https://www.nationalgeographic.com",
+      "https://www.howstuffworks.com",
+      "https://www.ted.com",
+      "https://www.thisiscolossal.com",
+      "https://www.archive.org"
+    ];
+
+    function goToRandomSite() {
+      const randomIndex = Math.floor(Math.random() * safeSites.length);
+      window.location.href = safeSites[randomIndex];
+    }
+  </script>
+</body>
+</html>
